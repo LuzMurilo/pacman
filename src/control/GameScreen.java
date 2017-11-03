@@ -7,6 +7,7 @@ import utils.Drawing;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,17 +37,22 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         elemArray = new ArrayList<Element>();
 
         /*Cria e adiciona elementos*/
-        pacman = new Pacman("pacman.png");
+        pacman = new Pacman("pacman_openmounth.png");
         pacman.setPosition(0, 0);
         this.addElement(pacman);
         
-        Skull skull = new Skull("caveira.png");
+        Ghost ghost = new Ghost("pacman_openmounth.png");
+        ghost.setPosition(6,10);
+        this.addElement(ghost);
+
+        Skull skull = new Skull("ghost.png");
         skull.setPosition(9, 1);
         this.addElement(skull);
 
         Wall wall = new Wall("bichinho.png");
         wall.setPosition(8,8);
         this.addElement(wall);
+
     }
     
     public final void addElement(Element elem) {
@@ -68,18 +74,18 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
            Trocar essa parte por uma estrutura mais bem organizada
            Utilizando a classe Stage
         */
-        /*for (int i = 0; i < Consts.NUM_CELLS; i++) {
+        for (int i = 0; i < Consts.NUM_CELLS; i++) {
             for (int j = 0; j < Consts.NUM_CELLS; j++) {
                 try {
-                    Image newImage = Toolkit.getDefaultToolkit().getImage(new java.io.File(".").getCanonicalPath() + Consts.PATH + "caveira.png");
+                    Image newImage = Toolkit.getDefaultToolkit().getImage(new java.io.File(".").getCanonicalPath() + Consts.PATH + "bricks.png");
                     g2.drawImage(newImage,
                             j * Consts.CELL_SIZE, i * Consts.CELL_SIZE, Consts.CELL_SIZE, Consts.CELL_SIZE, null);
                     
                 } catch (IOException ex) {
-                    Logger.getLogger(GameScreen.class.getName()).log(Level.SEVERE, null, ex);
+                    //Logger.getLogger(GameScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }*/
+        }
         
         this.controller.drawAllElements(elemArray, g2);
         this.controller.processAllElements(elemArray);
