@@ -1,21 +1,15 @@
 package control;
 
-import elements.Skull;
-import elements.Lolo;
-import elements.Element;
+import elements.*;
 import utils.Consts;
 import utils.Drawing;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
+
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Projeto de POO 2017
@@ -25,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class GameScreen extends javax.swing.JFrame implements KeyListener {
     
-    private final Lolo lolo;
+    private final Pacman pacman;
     private final ArrayList<Element> elemArray;
     private final GameController controller = new GameController();
 
@@ -42,13 +36,17 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
         elemArray = new ArrayList<Element>();
 
         /*Cria e adiciona elementos*/
-        lolo = new Lolo("lolo.png");
-        lolo.setPosition(0, 0);
-        this.addElement(lolo);
+        pacman = new Pacman("pacman.png");
+        pacman.setPosition(0, 0);
+        this.addElement(pacman);
         
         Skull skull = new Skull("caveira.png");
         skull.setPosition(9, 1);
-        this.addElement(skull);  
+        this.addElement(skull);
+
+        Wall wall = new Wall("bichinho.png");
+        wall.setPosition(8,8);
+        this.addElement(wall);
     }
     
     public final void addElement(Element elem) {
@@ -70,10 +68,10 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
            Trocar essa parte por uma estrutura mais bem organizada
            Utilizando a classe Stage
         */
-        for (int i = 0; i < Consts.NUM_CELLS; i++) {
+        /*for (int i = 0; i < Consts.NUM_CELLS; i++) {
             for (int j = 0; j < Consts.NUM_CELLS; j++) {
                 try {
-                    Image newImage = Toolkit.getDefaultToolkit().getImage(new java.io.File(".").getCanonicalPath() + Consts.PATH + "bricks.png");
+                    Image newImage = Toolkit.getDefaultToolkit().getImage(new java.io.File(".").getCanonicalPath() + Consts.PATH + "caveira.png");
                     g2.drawImage(newImage,
                             j * Consts.CELL_SIZE, i * Consts.CELL_SIZE, Consts.CELL_SIZE, Consts.CELL_SIZE, null);
                     
@@ -81,11 +79,11 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
                     Logger.getLogger(GameScreen.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }
+        }*/
         
         this.controller.drawAllElements(elemArray, g2);
         this.controller.processAllElements(elemArray);
-        this.setTitle("-> Cell: " + lolo.getStringPosition());
+        this.setTitle("-> Cell: " + pacman.getStringPosition());
         
         g.dispose();
         g2.dispose();
@@ -107,15 +105,15 @@ public class GameScreen extends javax.swing.JFrame implements KeyListener {
     
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            lolo.setMovDirection(Lolo.MOVE_UP);
+            pacman.setMovDirection(Pacman.MOVE_UP);
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            lolo.setMovDirection(Lolo.MOVE_DOWN);
+            pacman.setMovDirection(Pacman.MOVE_DOWN);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            lolo.setMovDirection(Lolo.MOVE_LEFT);
+            pacman.setMovDirection(Pacman.MOVE_LEFT);
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            lolo.setMovDirection(Lolo.MOVE_RIGHT);
+            pacman.setMovDirection(Pacman.MOVE_RIGHT);
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            lolo.setMovDirection(Lolo.STOP);
+            pacman.setMovDirection(Pacman.STOP);
         }
         
         //repaint(); /*invoca o paint imediatamente, sem aguardar o refresh*/
