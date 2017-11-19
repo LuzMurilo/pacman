@@ -1,17 +1,18 @@
 Pasta com o projeto levemente modificado(Desorganizado): https://drive.google.com/drive/folders/1bBTZpprB7qRoTxi0i21L6wwIchN2Rx1K
-O que falta: Atualização 16/11.
-1º) Criar mais 2 cenários;
+O que falta: Atualização 19/11 (Ás 16:30).
+1º) Criar mais 1 cenário;
 2º) Definir um modo inteligente para preencher os cenários: as paredes, fantasmas e o resto;(Feito)
 3º) Montar modo de contabilizar o score, pontos para cada componente, bolinhas grandes e pequenas e frutas;
 4º) Lógica para quando as bolinhas de poder forem capturadas os fantasmas carregarem a imagem necessária e serem comidos;
 5º) Criar funções para: exibir score, mudar de tela, salvar jogo, lógica de cada fantasma, limitação de cada um e outras coisas.
-6º) Salvar estado do jogo. 
-7}) Lógica de movimentação de cada fantasma.
+6º) Salvar estado do jogo;
+7}) Lógica de movimentação de cada fantasma(Estou tendo dificuldades).
 8º) Pacman morre o que fazer? Voltar ao inicio.
-9º) O Pacman quando ganhar uma vida, assim que morrer o estado o jogo não muda;
-10º) Verificar se está dentro que o professor pediu.
+9º)Dar pontos para cada elemento do jogo, bolinhas pequenas, grandes(aquela que dá habilidade ao pacman devorar os fantasmas) e frutas.
+10º) O Pacman quando ganhar uma vida, assim que morrer o estado o jogo muda para o início;
+11º) Verificar se está dentro que o professor pediu (Está no Tidia).
 
 Pasta com o projeto modificado para receber os objetos corretamente (Organizado): https://drive.google.com/drive/folders/12p0X7iOEZF0QEb9ILbFNwE4NFuM0sX14
-Irá ser modificado quando as mudanças no projeto acima derem certo.Atualizado 19/11
+Irá ser modificado quando as mudanças no projeto acima derem certo.Atualizado 19/11 (madrugada).
 
 Lembrando que a data de entrega é 9/12.
