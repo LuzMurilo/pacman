@@ -5,10 +5,11 @@ O que falta: Atualização 16/11.
 3º) Montar modo de contabilizar o score, pontos para cada componente, bolinhas grandes e pequenas e frutas;
 4º) Lógica para quando as bolinhas de poder forem capturadas os fantasmas carregarem a imagem necessária e serem comidos;
 5º) Criar funções para: exibir score, mudar de tela, salvar jogo, lógica de cada fantasma, limitação de cada um e outras coisas.
-6º) Salvar estado do jogo.
+6º) Salvar estado do jogo. 
 7}) Lógica de movimentação de cada fantasma.
 8º) Pacman morre o que fazer? Voltar ao inicio.
-9º) O Pacman quando ganhar uma vida, assim que morrer o estado o jogo não muda.
+9º) O Pacman quando ganhar uma vida, assim que morrer o estado o jogo não muda;
+10º) Verificar se está dentro que o professor pediu.
 
 Pasta com o projeto modificado para receber os objetos corretamente: https://drive.google.com/drive/folders/12p0X7iOEZF0QEb9ILbFNwE4NFuM0sX14
 Irá ser modificado quando as mudanças no projeto acima derem certo.
