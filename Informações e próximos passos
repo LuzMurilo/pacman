@@ -9,8 +9,8 @@ O que falta: Atualização 19/11 (Ás 16:30).
 7}) Lógica de movimentação de cada fantasma(Estou tendo dificuldades).
 8º) Pacman morre o que fazer? Voltar ao inicio.
 9º)Dar pontos para cada elemento do jogo, bolinhas pequenas, grandes(aquela que dá habilidade ao pacman devorar os fantasmas) e frutas.
-10º) O Pacman quando ganhar uma vida, assim que morrer o estado o jogo muda para o início;
-11º) Verificar se está dentro que o professor pediu (Está no Tidia).
+10º) O Pacman quando ganhar uma vida o estado o jogo muda para o início e quando ganhar a vida(?)
+11º) Verificar se está dentro do que o professor pediu (Está no Tidia).
 
 Pasta com o projeto modificado para receber os objetos corretamente (Organizado): https://drive.google.com/drive/folders/12p0X7iOEZF0QEb9ILbFNwE4NFuM0sX14
 Irá ser modificado quando as mudanças no projeto acima derem certo.Atualizado 19/11 (madrugada).
