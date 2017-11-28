@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author Luiz Eduardo
  * Baseado em material do Prof. Jose Fernando Junior
  */
-public class Pacman extends Element  implements Serializable{
+public class Pacman extends Element {
     
     public static final int STOP = 0;
     public static final int MOVE_LEFT = 1;

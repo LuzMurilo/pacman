@@ -28,7 +28,7 @@ public abstract class Element implements Serializable{
         this.isMortal = false;
         
         try {
-            imageIcon = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.PATH + imageName);
+            imageIcon = new ImageIcon(new java.io.File(".").getCanonicalPath() + Consts.IMG_PATH + imageName);
             Image img = imageIcon.getImage();
             BufferedImage bi = new BufferedImage(Consts.CELL_SIZE, Consts.CELL_SIZE, BufferedImage.TYPE_INT_ARGB);
             Graphics g = bi.createGraphics();
