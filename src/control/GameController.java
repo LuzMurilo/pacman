@@ -85,6 +85,9 @@ public class GameController implements Serializable {
                         // fazer tratamento do power pellet (fantasmas azuis, lentos...)
                         score = score + 50;
                         stage.subtractNPowerPellets();
+                    } else if (eTemp instanceof Fruit) {
+                    	Fruit f = (Fruit) eTemp;
+                        score = score + f.getPoints();
                     }
                     
                     e.remove(eTemp);
