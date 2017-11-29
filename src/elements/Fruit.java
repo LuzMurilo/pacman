@@ -10,14 +10,24 @@ import utils.Drawing;
 
 
 public class Fruit extends Element {
+	public int points;
 
     public Fruit(String imageName) {
         super(imageName);
         this.isTransposable = true;
+        if(imageName == "cherry.png") {
+        	points = 100;
+        } else if(imageName == "strawberry.png") {
+        	points = 300;
+        }
     }
 
     @Override
     public void autoDraw(Graphics g) {
         Drawing.draw(g, this.imageIcon, pos.getY(), pos.getX());
+    }
+    
+    public int getPoints() {
+    	return points;
     }
 }
