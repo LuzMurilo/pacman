@@ -30,31 +30,35 @@ public class GameController implements Serializable {
         cherryControl++;
         strawberryControl++;
         
-        if (cherryControl == Consts.TIMER_CHERRY) {
+         if (cherryControl == Consts.TIMER_CHERRY) {
             cherryControl = 0;
             Fruit cherry = new Fruit("cherry.png");
-            // fix me SET POSITION abaixo - precisa ser random de vdd, precisa saber se não tem nada em cima - parte bem dificil
-            //      talvez implementar uma matriz de boolean na GameScreen pra falar se tem algo ou não na celula
-            //      mas tem q ser dinamico 
-            //  (ex - pacman começa em uma posiçao - a celula esta ocupada
-            //      mas logo ele muda, precisa atualizar a matriz para liberar a celular anterior e ocupar a nova).
-            // 
-            // no fim, acho q eh mais facil do que jogar em cima de outra coisa e travar o jogo
-            cherry.setPosition(3,(new Random()).nextInt(18));
+            // (Murilo) - Minha Solucao: ele usa a funcao ja implementada isValidPosition para saber se a fruta caiu em uma parede,
+            // 			se sim manda em outra posicao, se nao adiciona no array.
+            // 			- No caso de cair em cima do pacman a fruta sera automaticamente consumida e os pontos adicionados normalmente,
+            //			e se cair em cima de PacDots tambem nao afeta em nada (foi testado), logo nao vejo problema.
+            cherry.setPosition(1,(new Random()).nextInt(18));
+            while(!isValidPosition(elemArray, cherry)) {
+            	cherry.setPosition((new Random()).nextInt(18),(new Random()).nextInt(18));
+            }
             elemArray.add(cherry);
             
-            // como fazer durar só 15 segundos na tela?
+            // como fazer durar sÃ³ 15 segundos na tela?
         }
         
         if (strawberryControl == Consts.TIMER_STRAWBERRY) {
             strawberryControl = 0;
             Fruit strawberry = new Fruit("strawberry.png");
             // fix me - mesmas coisas acima
-            strawberry.setPosition(14,(new Random()).nextInt(18));
+            
+            strawberry.setPosition((new Random()).nextInt(18),(new Random()).nextInt(18));
+            while(!isValidPosition(elemArray, strawberry)) {
+            	strawberry.setPosition((new Random()).nextInt(18),(new Random()).nextInt(18));
+            }
             elemArray.add(strawberry);
             
             // durar 15 segundos
-        }       
+        }    
     }
     
     public void processAllElements(ArrayList<Element> e, GameStage stage){
